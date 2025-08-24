@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: redis-heatmap-test
+    ports:
+      - "6380:6379"  # Using port 6380 to avoid conflicts with local Redis
+    volumes:
+      - redis-data:/data
+      - ./scripts/init-redis.sh:/docker-entrypoint-initdb.d/init-redis.sh:ro
+    command: redis-server --appendonly yes --notify-keyspace-events Ex
+    environment:
+      - REDIS_PASSWORD=testpassword123
+    restart: unless-stopped
+
+volumes:
+  redis-data:
