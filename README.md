@@ -240,13 +240,3 @@ docker-compose up -d
 4. Add tests
 5. Submit a pull request
 
-## License
-
-MIT License - see LICENSE file for details
-
-## Support
-
-For issues and questions:
-- Check the [documentation](docs/)
-- Open an issue on GitHub
-- Review the [PRD](redis_keyspace_heatmap_prd_v_1.md) for detailed specifications
